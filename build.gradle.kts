@@ -18,9 +18,17 @@ repositories {
 }
 
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter")
-	testImplementation("org.springframework.boot:spring-boot-starter-test")
-	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+	implementation("org.springframework.cloud:spring-cloud-starter-gateway")
+    implementation("org.springframework.boot:spring-boot-starter-actuator")
+    
+    // 로깅
+    implementation("net.logstash.logback:logstash-logback-encoder:7.4")
+    
+    // 개발용 도구
+    developmentOnly("org.springframework.boot:spring-boot-devtools")
+    
+    // 테스트
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
 tasks.withType<Test> {
